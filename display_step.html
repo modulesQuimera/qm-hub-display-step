@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('display_step', {
+        category: 'processing modular',
+        color: '#87CEEB',
+        defaults: {
+
+            step: {
+                value: ""
+            }
+
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "arrow-in.png",
+        label: "display step",
+        paletteLabel: "display step",
+
+    });
+</script>
+
+<script type="text/html" data-template-name="display_step">
+
+    <div class="form-row node-input-step">
+        <label for="node-input-step"><i class="fa fa-random"></i> Step </label>
+        <textarea type="text" id="node-input-step">
+    </div>
+
+</script>
+
+<script type="text/html" data-help-name="display_step">
+    <p>Display Step </p>
+</script>

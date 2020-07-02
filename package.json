@@ -1,0 +1,25 @@
+{
+  "name": "qm-hub-display-step",
+  "version": "1.0.0",
+  "description": "Node Component - Node-RED",
+  "main": "display_step.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modulesQuimera/qm-hub-display-step.git"
+  },
+  "keywords": ["quimera", "hub", "JIG"],
+  "author": "HUB-LSE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/modulesQuimera/qm-hub-display-step/issues"
+  },
+  "homepage": "https://github.com/modulesQuimera/qm-hub-display-step#readme",
+  "node-red": {
+    "nodes": {
+        "display_step": "display_step.js"
+    }
+  }
+}
