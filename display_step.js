@@ -14,17 +14,24 @@ module.exports = function(RED) {
         node.on('input', function(msg, send, done) {
 
             // substitua a variavel msg pela a informação desejada a ser passada via serial
-
-            var obj = {
-                payload: {
+            var globalContext = node.context().global;
+            var exportMode = globalContext.get("exportMode");
+            var currentMode = globalContext.get("currentMode");
+            var command = {
                     "type": "processing_modular_V1.0",
                     "slot": 1,
                     "compare": {},
                     "method": "display_step",
                     "step": node.step
-                }
             }
-            send(obj)
+            var file = globalContext.get("exportFile")
+            var slot = globalContext.get("slot");
+            if(currentMode == "test"){file.slots[slot].jig_test.push(command)}
+            else{file.slots[slot].jig_error.push(command)}
+            globalContext.set("exportFile", file);
+            // node.status({fill:"green", shape:"dot", text:"done"}); // seta o status pra waiting
+            
+            send(msg)
 
         });
 

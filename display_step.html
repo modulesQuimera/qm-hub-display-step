@@ -1,9 +1,11 @@
 <script type="text/javascript">
     RED.nodes.registerType('display_step', {
-        category: 'processing modular',
-        color: '#87CEEB',
+        category: 'Processing Module',
+        color: '#a6bbcf',
         defaults: {
-
+            name:{
+                value: ""
+            },
             step: {
                 value: ""
             }
@@ -11,18 +13,85 @@
         },
         inputs: 1,
         outputs: 1,
-        icon: "arrow-in.png",
-        label: "display step",
-        paletteLabel: "display step",
+        icon: "./icons/Display_Step.svg",
+        label:  function() { return this.name ||  "Display Step"},
+        paletteLabel: "Display Step",
 
     });
 </script>
 
+
+
+<style>
+/* 
+    select#node-input-mapeamento {
+        width: 100%;
+        display: none;
+    }
+
+    a#node-input-lookup-mapeamento {
+    position: absolute;
+    right: -30px !important;
+    top: 0px;
+    } */
+
+    label{
+        width: 50% !important;
+        margin-bottom: 2px !important;
+    }
+
+    .columm{
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    hr {
+    width: 40% !important;
+    float: left !important;
+    }
+
+    .hr-div-display-step{
+        display: flex !important;
+        justify-content: space-between !important;
+        margin-top: 250px !important;
+    }
+
+    .optional{
+        height: max-content !important;
+        margin-top: 10px !important;
+    }
+
+    .descript{
+        text-align: center;
+    }
+
+</style>
+
 <script type="text/html" data-template-name="display_step">
 
-    <div class="form-row node-input-step">
+    <div class="form-row columm">
+        <strong class="descript">    
+        Used to assign the step name.
+        </strong>
+    </div>
+
+
+    <div class="form-row columm node-input-step">
         <label for="node-input-step"><i class="fa fa-random"></i> Step </label>
-        <textarea type="text" id="node-input-step">
+        <textarea style="width: 70%; !important" type="text" id="node-input-step"> </textarea >
+    </div>
+
+
+
+    <div class="hr-div-display-step">
+        <hr>
+        <span class="optional">Optional</span>
+        <hr>
+    </div>
+
+    <div class="form-row columm">
+        <label style="width: 50% !important;" for="node-input-name" ><i class="fa fa-tag"></i> Component Nickname</label>
+        <input type="text" id="node-input-name" placeholder="Name">
     </div>
 
 </script>
