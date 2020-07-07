@@ -1,14 +1,11 @@
 module.exports = function(RED) {
 
     // "use strict";
-
-
-
     function display_stepNode(config) {
         RED.nodes.createNode(this, config);
         this.step = config.step
-
-
+        this.step_number = config.step_number
+        
         var node = this
 
         node.on('input', function(msg, send, done) {
@@ -18,11 +15,12 @@ module.exports = function(RED) {
             var exportMode = globalContext.get("exportMode");
             var currentMode = globalContext.get("currentMode");
             var command = {
-                    "type": "processing_modular_V1.0",
-                    "slot": 1,
-                    "compare": {},
-                    "method": "display_step",
-                    "step": node.step
+                "type": "processing_modular_V1.0",
+                "slot": 1,
+                "compare": {},
+                "method": "display_step",
+                "step": node.step,
+                "step_number": node.step_number
             }
             var file = globalContext.get("exportFile")
             var slot = globalContext.get("slot");
