@@ -30,6 +30,7 @@ module.exports = function(RED) {
             else{file.slots[slot].jig_error.push(command)}
             globalContext.set("exportFile", file);
             // node.status({fill:"green", shape:"dot", text:"done"}); // seta o status pra waiting
+            console.log(command)
             
             send(msg)
 
