@@ -12,11 +12,10 @@
             step_number: {
                 value: ""
             }
-
         },
         inputs: 1,
         outputs: 1,
-        icon: "./icons/Display_Step.svg",
+        icon: "Display_Step.svg",
         label:  function() { return this.name ||  "Display Step"},
         paletteLabel: "Display Step",
 
@@ -26,18 +25,6 @@
 
 
 <style>
-/* 
-    select#node-input-mapeamento {
-        width: 100%;
-        display: none;
-    }
-
-    a#node-input-lookup-mapeamento {
-    position: absolute;
-    right: -30px !important;
-    top: 0px;
-    } */
-
     label{
         width: 50% !important;
         margin-bottom: 2px !important;
@@ -67,41 +54,31 @@
     .descript{
         text-align: center;
     }
-
 </style>
 
 <script type="text/html" data-template-name="display_step">
-
     <div class="form-row columm">
         <strong class="descript">    
         Used to assign the step name.
         </strong>
     </div>
-
-
     <div class="form-row columm node-input-step">
         <label for="node-input-step"><i class="fa fa-random"></i> Step </label>
         <textarea style="width: 70%; !important" type="text" id="node-input-step"> </textarea >
     </div>
-
     <div class="form-row columm node-input-step_number">
         <label for="node-input-step_number"><i class="fa fa-random"></i> Step number </label>
         <input style="width: 20%; !important" type="number" min="1" id="node-input-step_number">
     </div>
-
-
-
     <div class="hr-div-display-step">
         <hr>
         <span class="optional">Optional</span>
         <hr>
     </div>
-
     <div class="form-row columm">
         <label style="width: 50% !important;" for="node-input-name" ><i class="fa fa-tag"></i> Component Nickname</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
-
 </script>
 
 <script type="text/html" data-help-name="display_step">
