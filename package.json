@@ -1,5 +1,5 @@
 {
-  "name": "qm-hub-display-step",
+  "name": "qm-display-step",
   "version": "1.0.4",
   "description": "Node Component - Node-RED",
   "main": "display_step.js",
