@@ -1,7 +1,7 @@
 <script type="text/javascript">
     RED.nodes.registerType('display_step', {
         category: 'Processing Module',
-        color: '#a6bbcf',
+        color: '#ff0028',
         defaults: {
             name:{
                 value: ""
@@ -15,8 +15,8 @@
         },
         inputs: 1,
         outputs: 1,
-        icon: "Display_Step.svg",
-        label:  function() { return this.name ||  "Display Step"},
+        icon: "PCS_Modular.svg",
+        label:  function() { return this.name? "Display Step - " + this.name:  "Display Step"},
         paletteLabel: "Display Step",
 
     });
@@ -59,11 +59,11 @@
 <script type="text/html" data-template-name="display_step">
     <div class="form-row columm">
         <strong class="descript">    
-        Used to assign the step name.
+            Current step that appears on the jig display.
         </strong>
     </div>
     <div class="form-row columm node-input-step">
-        <label for="node-input-step"><i class="fa fa-random"></i> Step </label>
+        <label for="node-input-step"><i class="fa fa-random"></i> Step label </label>
         <textarea style="width: 70%; !important" type="text" id="node-input-step"> </textarea >
     </div>
     <div class="form-row columm node-input-step_number">
@@ -82,5 +82,5 @@
 </script>
 
 <script type="text/html" data-help-name="display_step">
-    <p>Display Step </p>
+    <p>Current step that appears on the jig display. </p>
 </script>
